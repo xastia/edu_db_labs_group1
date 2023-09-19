@@ -1,9 +1,9 @@
 {
-  "name": "edu_db_labs",
+  "name": "edu_db_labs_group1",
   "version": "2.1.0",
   "main": "index.js",
   "description": "Databases labs template",
-  "repository": "https://github.com/boldak/dis-edu",
+  "repository": "https://github.com/AntonenkoTymofii/edu_db_labs_group1",
   "author": "Andrey Boldak <boldak.andrey@gmail.com>",
   "license": "ECL 2.0",
   "scripts": {
