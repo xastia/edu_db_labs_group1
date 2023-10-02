@@ -30,4 +30,4 @@
 
 ## Посилання
 
-1. - <a name="link1" href="https://uk.wikipedia.org/wiki/%D0%95%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D1%82">
+1. <a name="link1"></a>[1] <https://uk.m.wikipedia.org/wiki/Експерт><br>
