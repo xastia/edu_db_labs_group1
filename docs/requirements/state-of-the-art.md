@@ -84,18 +84,20 @@ Survio,Typeform,Zoho Survey навпаки пропонують розширен
 
 *[Розділ містить повний список всіх документів, про які згадується.]*
 
-[5]-https://ela.kpi.ua/bitstream/123456789/19300/1/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B8%20%D0%B5%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BE%D1%86%D1%96%D0%BD%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F.pdf
+[5]- [Курс лекцій КПІ викладача Ярощук Л.Д.](https://ela.kpi.ua/bitstream/123456789/19300/1/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B8%20%D0%B5%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BE%D1%86%D1%96%D0%BD%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F.pdf)
 
-[6]-https://elib.lntu.edu.ua/sites/default/files/elib_upload/%D0%95%D0%9D%D0%9F_%D0%9C%D0%BE%D1%80%D0%BE%D0%B7_%D0%9F%D1%80%D0%B8%D1%81%D1%82%D1%83%D0%BF%D0%B0/page13.html
+[6]- [Матеріали Луцького національного технічного університету](https://elib.lntu.edu.ua/sites/default/files/elib_upload/%D0%95%D0%9D%D0%9F_%D0%9C%D0%BE%D1%80%D0%BE%D0%B7_%D0%9F%D1%80%D0%B8%D1%81%D1%82%D1%83%D0%BF%D0%B0/page13.html) 
 
-[7]-https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwia6ZOS-NeBAxX5GhAIHY7nA4sQFnoECA4QAQ&url=https%3A%2F%2Fpns.hneu.edu.ua%2Fmod%2Fresource%2Fview.php%3Fid%3D477471&usg=AOvVaw1toMPFqotadM6vonN4UiNZ&opi=89978449
+[7]- [Лекція Харківського національного економічного університету імені Семена Кузнеця Хнеу ](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwia6ZOS-NeBAxX5GhAIHY7nA4sQFnoECA4QAQ&url=https%3A%2F%2Fpns.hneu.edu.ua%2Fmod%2Fresource%2Fview.php%3Fid%3D477471&usg=AOvVaw1toMPFqotadM6vonN4UiNZ&opi=89978449)
 
-[8]-https://uk.wikipedia.org/wiki/Google_%D0%A4%D0%BE%D1%80%D0%BC%D0%B8
+[8]- [Матеріал з Вікіпедії щодо Google Forms](https://uk.wikipedia.org/wiki/Google_%D0%A4%D0%BE%D1%80%D0%BC%D0%B8
+) 
 
-[9]-https://surveyjs.io/
+[9]- [Інформація щодо SurveyJs](https://surveyjs.io/)
 
-[10]-https://softico.ua/uk/manufacturer/surveymonkey/
+[10]- [Інформація щодо SurveyMonkey](https://softico.ua/uk/manufacturer/surveymonkey/) 
 
-[11]-https://uk.wikipedia.org/wiki/%D0%9E%D0%A1%D0%90
+[11]- [Матеріал з Вікіпедії щодо системи "ОСА"](https://uk.wikipedia.org/wiki/%D0%9E%D0%A1%D0%90)  
 
-[12]- https://en.wikipedia.org/wiki/Typeform_(service)
+[12]- [Матеріал з Вікіпедії щодо Typeform](https://en.wikipedia.org/wiki/Typeform_(service))
+  
