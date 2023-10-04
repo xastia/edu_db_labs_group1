@@ -122,13 +122,7 @@
 
 ## Посилання
 
-<a name="link1"></a>1. <https://uk.m.wikipedia.org/wiki/Експерт><br>
-<a name="link2"></a>2. <https://buromt.com.ua/uk/expert-survey/><br>
-<a name="link3"></a>3. <https://www.sm-hom.com.ua/provedennya-ekspertnikh-opituvan/><br>
-<a name="link4"></a>4. <https://studfile.net/preview/5456986/page:6/><br>
-<a name="link5"></a>5. <https://uk.wikipedia.org/wiki/Анкетування><br>
-<a name="link6"></a>6. <https://uk.wikipedia.org/wiki/Анкета><br>
-<a name="link7"></a>7. <https://stud.com.ua/63579/marketing/anketuvannya><br>
+ 
 
 
 
