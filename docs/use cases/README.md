@@ -105,7 +105,6 @@
     
 @enduml
 
-
 </center>
 
 ## Сценарії використання
@@ -158,6 +157,8 @@
 
 @enduml
 
+</center>
+
 ### USER.SIGNIN
 ---
 
@@ -205,6 +206,8 @@
 
 @enduml
 
+</center>
+
 ###  SURVEY.CREATE
 ---
 | **ID:**                | SURVEY.CREATE                                                                                                                                                                                                                   |
@@ -251,6 +254,8 @@
 
 @enduml
 
+</center>
+
 ### SURVEY.CLOSE
 ---  
 | **ID:**                | SURVEY.CLOSE                                                                                                                                                                                                                                                                  |
@@ -289,6 +294,8 @@
 
 @enduml
 
+</center>
+
 ### SURVEY.GET_RESULTS
 --- 
 
@@ -325,6 +332,8 @@
     stop;
 
 @enduml
+
+</center>
 
 ### SURVEY.ADD_QUESTION 
 --- 
@@ -375,6 +384,8 @@
 
 @enduml
 
+</center>
+
 ### SURVEY.DELETE_QUESTION
 --- 
 | **ID:**                | SURVEY.DELETE_QUESTION                                                                                                                                                                                                                                      |
@@ -423,6 +434,8 @@
 
 @enduml
 
+</center>
+
 ### EXPERT.TAKE_SURVEY
 --- 
 | **ID:**                | EXPERT.TAKE_SURVEY                                                                                                                                                                                                                                               |
@@ -463,6 +476,8 @@
     stop;
 
 @enduml
+
+</center>
 
 ### EXPERT.CHANGE_ANSWERS
 ---  
@@ -514,6 +529,8 @@
     stop;
 @enduml
 
+</center>
+
 ### SURVEY.EXPORT 
 --- 
 | **ID:**                | SURVEY.EXPORT                                                                                                                                                                                                                                                                  |
@@ -562,6 +579,8 @@
 
 @enduml
 
+</center>
+
 ### USER.SHARE
 --- 
 | **ID:**                | USER.SHARE                                                                                                                                                              |
@@ -596,9 +615,10 @@
 
 @enduml
 
-### SURVEY.GET_QUESTION 
---- 
+</center>
 
+### SURVEY.GET_QUESTION 
+---
 | **ID:**                | SURVEY.GET_QUESTION                                                                                                                                                                                                                          |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **НАЗВА:**             | Отримати статистику відповідей на конкретне питання                                                                                                                                                                                          |
@@ -608,7 +628,6 @@
 | **ВИКЛЮЧНІ СИТУАЦІЇ:** | Опитування ніхто не пройшов - EmptyResultsException                                                                                                                                                                                          |
 | **ОСНОВНИЙ СЦЕНАРІЙ:** | 1. Клієнт відкриває опитування<br/>2. Клієнт обирає конкретне питання<br/>3. Клієнт надсилає запит для перегляду результатів<br/>4. Система обробляє запит (може виникнути EmptyResultsException)<br/>5. Система надає результати опитування |
 
---- 
 
 <center style="
     border-radius:4px;
@@ -642,3 +661,5 @@
     stop;
 
 @enduml
+
+</center>
