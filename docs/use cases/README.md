@@ -24,13 +24,13 @@
  
   
       Expert -u-|> Client
-      Expert -d-> EInteraction
+      Expert -u-> EInteraction
       Client -d->UInteraction
       Client -l->SEdit
       Client -d->SShare
       Client -r->SResults
       Client -d->SClose
-      Client -u->SCreate
+      Client -d->SCreate
       
 @enduml
 
