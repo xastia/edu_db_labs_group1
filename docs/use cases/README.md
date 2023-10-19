@@ -27,7 +27,7 @@
       Expert -d-> EInteraction
       Client -d->UInteraction
       Client -l->SEdit
-      Client -u->SShare
+      Client -d->SShare
       Client -r->SResults
       Client -d->SClose
       Client -u->SCreate
