@@ -24,7 +24,7 @@
  
   
       Expert -u-|> Client
-      Expert -u-> EInteraction
+      Expert -l-> EInteraction
       Client -d->UInteraction
       Client -l->SEdit
       Client -d->SShare
