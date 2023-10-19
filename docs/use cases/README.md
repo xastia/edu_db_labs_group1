@@ -29,7 +29,7 @@
       Client -l->SEdit
       Client -u->SShare
       Client -r->SResults
-      Client -u->SClose
+      Client -d->SClose
       Client -u->SCreate
       
 @enduml
