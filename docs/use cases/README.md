@@ -23,7 +23,7 @@
     usecase "SURVEY.MANAGE_RESULTS\nВзаємодія\nз результатами" as SResults
  
   
-      Client -d-|> Expert
+      Expert -d-|> Client
       Expert -d-> EInteraction
       Client -d->UInteraction
       Client -l->SEdit
@@ -69,11 +69,11 @@
       Client -u-> CREATTE
       Client -u-> CLOSE
       Client -u-> SHARE
+      Client -u-> GET_RESULT
       UInteraction -r-> SIGNUP
       UInteraction -d-> SIGNIN
       SEdit <-d. DELETE_QUESTION : extends
       SEdit <-d. ADD_QUESTION : extends
-      SResults <-l. GET_RESULTS : extends 
       SResults <-u. GET_QUESTION : extends 
       SResults <-d. EXPORT : extends
   
@@ -99,7 +99,7 @@
     usecase "EXPERT.CHANGE_ANSWERS\nЗмінити відповіді пройденого опитування" as ChangeAnswers
     
     Collaborator -d-> SurveyInteraction
-    SurveyInteraction  -d-> TakeSurvey
+    SurveyInteraction  <.d. TakeSurvey : extends
     SurveyInteraction  <.d. ChangeAnswers : extends
     
     
