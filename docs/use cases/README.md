@@ -23,7 +23,7 @@
     usecase "SURVEY.MANAGE_RESULTS\nВзаємодія\nз результатами" as SResults
  
   
-      Expert -d-|> Client
+      Expert -u-|> Client
       Expert -d-> EInteraction
       Client -d->UInteraction
       Client -l->SEdit
