@@ -2,7 +2,8 @@
 
 ## SQL-скрипт для створення на початкового наповнення бази даних
     
-    ```sql
+```sql
+
     -- MySQL Workbench Forward Engineering
 
     SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
@@ -210,7 +211,8 @@
     SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
     SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-    ```
+
+```
 
 ## RESTfull сервіс для управління даними
 
