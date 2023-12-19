@@ -216,3 +216,298 @@
 
 ## RESTfull сервіс для управління даними
 
+RESTfull API для управління даними таблиці Survey створеної в MySQL 
+було створено за допомогою фреймворку Spring Boot на мові Java. 
+RESTfull API представляє собою CRUD застосунок. 
+
+### Файл .gradle з встановленими залежностями
+
+```
+    plugins {
+	    id 'java'
+	    id 'org.springframework.boot' version '3.2.0'
+	    id 'io.spring.dependency-management' version '1.1.4'
+    }
+
+    group = 'com.example'
+    version = '0.0.1-SNAPSHOT'
+
+    java {
+	    sourceCompatibility = '17'
+    }
+
+    repositories {
+	    mavenCentral()
+    }
+
+    dependencies {
+	    implementation 'org.springframework.boot:spring-boot-starter-web'
+	    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	    implementation 'mysql:mysql-connector-java:8.0.28'
+	    runtimeOnly 'mysql:mysql-connector-java'
+	    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+
+    tasks.named('test') {
+	    useJUnitPlatform()
+    }
+```
+
+### Підключення бази даних
+
+```
+    spring.jpa.hibernate.ddl-auto=update
+    spring.datasource.url=jdbc:mysql://localhost:3306/lab6?useUnicode=true&useSSL=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    spring.datasource.username=root
+    spring.datasource.password=7327Tim2005&
+
+```
+
+### Основний клас для запуску API
+```
+    package com.example.lab6;
+
+    import org.springframework.boot.SpringApplication;
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
+    
+    @SpringBootApplication
+    public class Lab6Application {
+    
+        public static void main(String[] args) {
+            SpringApplication.run(Lab6Application.class, args);
+        }
+    }
+```
+
+### Клас сутності для взаємодії з БД
+
+```
+    package com.example.lab6.Entity;
+
+    import jakarta.persistence.*;
+    import java.sql.Date;
+    import java.time.LocalDate;
+    
+    @Entity
+    @Table(name = "survey")
+    public class SurveyEntity {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+        private String title;
+        private String description;
+        private Date created = Date.valueOf(LocalDate.now());
+    
+        public SurveyEntity() {
+        }
+        public void setId(Long id) {
+            this.id = id;
+        }
+    
+        public Long getId() {
+            return id;
+        }
+    
+        public String getTitle() {
+            return title;
+        }
+    
+        public void setTitle(String title) {
+            this.title = title;
+        }
+    
+        public String getDescription() {
+            return description;
+        }
+    
+        public void setDescription(String description) {
+            this.description = description;
+        }
+    
+        public Date getCreated() {
+            return created;
+        }
+    
+        public void setCreated(Date created) {
+            this.created = created;
+        }
+    }
+```
+
+### Контролер для роботи з опитуваннями
+
+```
+    package com.example.lab6.Controller;
+
+    import com.example.lab6.Entity.SurveyEntity;
+    import com.example.lab6.Exception.SurveyAlreadyExistException;
+    import com.example.lab6.Exception.SurveyNotFoundException;
+    import com.example.lab6.Service.SurveyService;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.http.ResponseEntity;
+    import org.springframework.web.bind.annotation.*;
+
+    @RestController
+    @RequestMapping("/surveys")
+    public class SurveyController {
+
+        @Autowired
+        private SurveyService surveyService;
+
+        @PostMapping
+        public ResponseEntity createSurvey(@RequestBody SurveyEntity survey){
+        try {
+            surveyService.createSurvey(survey);
+            return ResponseEntity.ok("Опитування було створено успішно");
+        } catch (SurveyAlreadyExistException exception){
+            return ResponseEntity.badRequest().body(exception.getMessage());
+        } catch (Exception exception){
+            return ResponseEntity.badRequest().body("Відбулась помилка створення опитування!");
+        }
+        }
+
+        @GetMapping
+        public ResponseEntity getOneSurvey(@RequestParam Long id){
+            try {
+                return ResponseEntity.ok(surveyService.getOne(id));
+            } catch (SurveyNotFoundException exception){
+                return ResponseEntity.badRequest().body(exception.getMessage());
+            } catch (Exception exception){
+                return ResponseEntity.badRequest().body("Відбулась помилка отримання опитувань");
+            }
+        }
+
+        @GetMapping("/all")
+        public ResponseEntity getSurveys(){
+            try {
+                return ResponseEntity.ok(surveyService.getSurveys());
+            } catch (SurveyNotFoundException exception){
+                return ResponseEntity.badRequest().body(exception.getMessage());
+            } catch (Exception exception){
+                return ResponseEntity.badRequest().body("Відбулась помилка отримання опитувань");
+            }
+        }
+
+        @DeleteMapping("/{id}")
+        public ResponseEntity deleteSurvey(@PathVariable Long id){
+            try {
+                return ResponseEntity.ok("Було успішно видалено опитування з id: " +
+                        surveyService.deleteSurvey(id));
+            } catch (SurveyNotFoundException exception){
+                return ResponseEntity.badRequest().body(exception.getMessage());
+            } catch (Exception exception){
+                return ResponseEntity.badRequest().body("Відбулась помилка отримання опитувань");
+            }
+        }
+
+         @PutMapping
+        public ResponseEntity updateSurvey(@RequestParam Long id,
+                                           @RequestBody SurveyEntity survey){
+            try {
+                surveyService.updateSurvey(id, survey);
+                return ResponseEntity.ok("Опитування було оновлено успішно");
+            }catch (SurveyAlreadyExistException exception) {
+                return ResponseEntity.badRequest().body(exception.getMessage());
+            } catch (Exception exception){
+                return ResponseEntity.badRequest().body("Відбулась помилка оновлення опитування!");
+            }
+        }
+    }
+```
+
+### Репозиторій для роботи з опитуванняи
+
+```
+    package com.example.lab6.Repository;
+
+    import com.example.lab6.Entity.SurveyEntity;
+    import org.springframework.data.repository.CrudRepository;
+    
+    public interface SurveyRepo extends CrudRepository <SurveyEntity, Long>{
+        SurveyEntity findByTitle(String title);
+    }
+```
+
+### Сервіс для роботи з опитуваннями
+
+```
+    package com.example.lab6.Service;
+
+    import com.example.lab6.Entity.SurveyEntity;
+    import com.example.lab6.Exception.SurveyAlreadyExistException;
+    import com.example.lab6.Exception.SurveyNotFoundException;
+    import com.example.lab6.Repository.SurveyRepo;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.stereotype.Service;
+    
+    @Service
+    public class SurveyService {
+    
+        @Autowired
+        private SurveyRepo surveyRepo;
+    
+        public SurveyEntity createSurvey(SurveyEntity survey) throws SurveyAlreadyExistException {
+            if(surveyRepo.findByTitle(survey.getTitle()) != null){
+                throw new SurveyAlreadyExistException("Опитування з такою назвою вже існує!");
+            }
+            return surveyRepo.save(survey);
+        }
+        
+        public SurveyEntity getOne(Long id) throws SurveyNotFoundException {
+            SurveyEntity survey = surveyRepo.findById(id).get();
+            if(survey == null){
+                throw new SurveyNotFoundException("Такого опитування не існує");
+            }
+            return survey;
+        }
+        
+        public Iterable<SurveyEntity> getSurveys() throws SurveyNotFoundException {
+            Iterable<SurveyEntity> surveyEntities = surveyRepo.findAll();
+            if (surveyEntities == null){
+                throw new SurveyNotFoundException("Опитувань не існує");
+            }
+            return surveyEntities;
+        }
+        
+        public Long deleteSurvey(Long id) throws SurveyNotFoundException {
+            if (surveyRepo.findById(id) == null){
+                throw new SurveyNotFoundException("Такого опитування вже не існує");
+            }
+            surveyRepo.deleteById(id);
+            return id;
+        }
+        
+        public SurveyEntity updateSurvey(Long id, SurveyEntity survey) throws SurveyAlreadyExistException {
+            SurveyEntity surveyEntity = surveyRepo.findById(id).get();
+            surveyEntity.setTitle(survey.getTitle());
+            surveyEntity.setDescription(survey.getDescription());
+            if(surveyRepo.findByTitle(surveyEntity.getTitle()) != null){
+                throw new SurveyAlreadyExistException("Опитування з такою назвою вже існує!");
+            }
+            return surveyRepo.save(surveyEntity);
+        }
+    }
+```
+
+### Виняткові ситуації, які можуть виникнути
+
+```
+    package com.example.lab6.Exception;
+    
+    public class SurveyAlreadyExistException extends Exception{
+        public SurveyAlreadyExistException(String message) {
+            super(message);
+        }
+    }
+```
+
+```
+    package com.example.lab6.Exception;
+
+    public class SurveyNotFoundException extends Exception{
+        public SurveyNotFoundException(String message) {
+            super(message);
+        }
+    }
+```
