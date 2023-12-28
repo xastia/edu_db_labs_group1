@@ -7,10 +7,10 @@ footer: "ECL 2.0 Licensed | Copyright © [2023] [Antonenko Tymofii]"
 ---
 
 
-**Виконав:** 
+**Виконала:** 
 
-*студент 2-го курсу, групи ІМ-21*
-<span padding-right:5em></span> **Тимофій АНТОНЕНКО** *antonenkotimofii@gmail.com* <a href="https://t.me/limon_chick7327" target="_blank"> Telegram </a>
+*студентка 2-го курсу, групи ІМ-21*
+<span padding-right:5em></span> **Анастасія Дворецька* *nastyadvoretskaya2005@gmail.com* <a href="https://t.me/xastia" target="_blank"> Telegram </a>
 
 **Керівник**
 
