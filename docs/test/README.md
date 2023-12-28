@@ -3,7 +3,7 @@
 Тестування системи проводилось у IDE  Visual Studio Code за допомогою застосунку Postman
 
 ## Отримання всіх питань
-![screenGetAll](./images/screenAdd.png)
+![screenGetAll](./images/screenGetAll.png)
 
 ## Отримання одного питання
 ![screenGet](./images/screenGet.png)
