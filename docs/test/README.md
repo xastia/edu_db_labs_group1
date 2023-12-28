@@ -3,19 +3,19 @@
 Тестування системи проводилось у IDE  Visual Studio Code за допомогою застосунку Postman
 
 ## Отримання всіх питань
-![screenGetAll](screenAdd.png)
+![screenGetAll](./images/screenAdd.png)
 
 ## Отримання одного питання
-![screenGet](screenGet.png)
+![screenGet](./images/screenGet.png)
 
 ## Додавання питання
-![screenAdd](screenAdd.png)
+![screenAdd](./images/screenAdd.png)
 
 ## Видалення питання за id
-![screenDelete](screenDelete.png)
+![screenDelete](./images/screenDelete.png)
 
 ## Змінити питання за id
-![screenUpdate](screenUpdate.png)
+![screenUpdate](./images/screenUpdate.png)
 
 
 
